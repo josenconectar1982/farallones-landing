@@ -1,0 +1,10 @@
+# Blueprint de Render: sitio estático de la landing page
+services:
+  - type: web
+    name: farallones-landing
+    runtime: static
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN

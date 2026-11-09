@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atlético Deportivo Farallones · Escuela de fútbol en Cali</title>
+<meta name="description" content="Escuela de fútbol para niños y niñas de 5 a 13 años en Cali. Dirigida por Juan Sebastián Trujillo Espinal, con más de 10 años formando futbolistas. Seguimiento semanal en nuestra app.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Atlético Deportivo Farallones · Escuela de fútbol en Cali">
+<meta property="og:description" content="Formamos futbolistas y personas desde los 5 años. Seguimiento semanal para las familias desde nuestra app.">
+<meta property="og:image" content="assets/icon-512.png">
+<link rel="icon" type="image/svg+xml" href="assets/crest.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crimson: #B0122C;
+  --crimson-deep: #6E0A1A;
+  --crimson-light: #E8414F;
+  --black: #000;
+  --ink: #161414;
+  --stone: #6B6569;
+  --line: #E4DEE0;
+  --mist: #F4F1F2;
+  --white: #fff;
+  --display: 'Big Shoulders Display', 'Arial Narrow', 'Roboto Condensed', Impact, sans-serif;
+  --body: 'Barlow', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --wrap: 1160px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-behavior: smooth; scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px)); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+img, svg { max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); line-height: .98; margin: 0; letter-spacing: .005em; }
+h2 { font-size: clamp(2.5rem, 6vw, 4.25rem); font-weight: 900; margin-bottom: 22px; }
+h3 { font-size: 1.6rem; font-weight: 800; }
+p { margin: 0 0 1em; }
+:focus-visible { outline: 3px solid var(--crimson-light); outline-offset: 3px; }
+[hidden] { display: none !important; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 22px; }
+.lede { font-size: 1.2rem; max-width: 60ch; color: var(--stone); }
+.on-dark .lede { color: #CFC8CB; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; font-weight: 700; font-size: 1.05rem; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-family: var(--body); transition: background .15s, color .15s, border-color .15s; }
+.btn svg { width: 20px; height: 20px; }
+.btn-crimson { background: var(--crimson); color: #fff; }
+.btn-crimson:hover { background: var(--crimson-deep); }
+.btn-outline { border-color: rgba(255,255,255,.55); color: #fff; background: transparent; }
+.btn-outline:hover { background: #fff; color: var(--black); }
+.btn-black { background: var(--black); color: #fff; }
+.btn-black:hover { background: var(--crimson); }
+
+/* ---------- Navegación ---------- */
+.nav { position: sticky; top: 0; z-index: 40; background: var(--black); color: #fff; }
+.nav::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--black); z-index: 10; }
+.nav-inner { max-width: var(--wrap); margin: 0 auto; padding: 0 22px; height: 76px; display: flex; align-items: center; gap: 20px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+.logo img { width: 44px; height: 53px; }
+.logo span { font-family: var(--display); font-weight: 900; font-size: 1.3rem; line-height: .95; }
+.logo small { display: block; font-family: var(--body); font-weight: 500; font-size: .78rem; color: #BDB5B8; letter-spacing: .02em; }
+.nav-links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; font-weight: 600; font-size: .98rem; color: #E6E0E2; }
+.nav-links a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--crimson); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+.nav .btn { min-height: 44px; padding: 0 18px; font-size: .95rem; }
+.menu-btn { display: none; width: 46px; height: 46px; border: 0; border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
+.menu-btn svg { width: 26px; height: 26px; }
+.mobile-menu { position: fixed; inset: 0; z-index: 60; background: var(--black); color: #fff; padding: calc(env(safe-area-inset-top, 0px) + 14px) 22px 30px; display: flex; flex-direction: column; }
+.mobile-menu .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.mobile-menu ul { list-style: none; padding: 0; margin: 0; }
+.mobile-menu li a { display: block; font-family: var(--display); font-weight: 900; font-size: 2.6rem; text-decoration: none; padding: 6px 0; }
+.mobile-menu .btn { margin-top: auto; }
+.close-btn { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 16px; border-radius: 23px; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #fff; font: 600 1rem var(--body); cursor: pointer; }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; background: var(--black); color: #fff; overflow: hidden; }
+.hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.35fr .65fr; gap: 40px; align-items: center; padding-top: clamp(48px, 9vw, 110px); padding-bottom: clamp(150px, 22vw, 290px); }
+.hero h1 { font-size: clamp(3.4rem, 10vw, 8rem); font-weight: 900; line-height: .9; margin-bottom: 26px; text-wrap: balance; }
+.hero p { font-size: 1.25rem; color: #D8D1D4; max-width: 34em; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.hero-crest { justify-self: center; width: min(100%, 320px); filter: drop-shadow(0 24px 40px rgba(176,18,44,.35)); }
+.range { position: absolute; left: 0; right: 0; bottom: -1px; z-index: 1; width: 100%; height: clamp(150px, 24vw, 330px); display: block; }
+.range .far { fill: var(--crimson-deep); }
+.range .near { fill: var(--crimson); }
+.range .snow { fill: #fff; }
+.range-label { position: absolute; z-index: 2; right: 22px; bottom: 18px; font-weight: 600; font-size: .9rem; color: #fff; opacity: .9; }
+@media (prefers-reduced-motion: no-preference) {
+  .range .near { animation: rise 1.1s cubic-bezier(.2,.7,.2,1) both; }
+  .range .far { animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both; }
+  .hero h1, .hero p, .hero-cta, .hero-crest { animation: fade .8s .35s ease-out both; }
+  @keyframes rise { from { transform: translateY(60%); } to { transform: none; } }
+  @keyframes fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
+
+/* ---------- Secciones ---------- */
+section { padding: clamp(70px, 10vw, 120px) 0; }
+.on-dark { background: var(--black); color: #fff; }
+.on-crimson { background: var(--crimson); color: #fff; }
+.on-mist { background: var(--mist); }
+.section-head { max-width: 760px; margin-bottom: 46px; }
+.section-head h2 { margin-bottom: 16px; }
+
+/* La escuela */
+.school { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(30px, 6vw, 80px); align-items: start; }
+.director { background: var(--black); color: #fff; border-radius: 4px; overflow: hidden; }
+.director-photo { aspect-ratio: 4 / 3; background: var(--crimson); position: relative; display: grid; place-items: center; overflow: hidden; }
+.director-photo span { font-family: var(--display); font-weight: 900; font-size: clamp(6rem, 16vw, 9rem); color: rgba(0,0,0,.28); line-height: 1; }
+.director-photo svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 45%; }
+.director-body { padding: 24px 26px 28px; }
+.director-body h3 { font-size: 2rem; margin-bottom: 4px; }
+.director-body .role { color: #E9A3AE; font-weight: 600; margin-bottom: 14px; }
+.director-body p { color: #D8D1D4; }
+.years { display: flex; align-items: baseline; gap: 12px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 16px; margin-top: 6px; }
+.years b { font-family: var(--display); font-size: 3.6rem; font-weight: 900; line-height: .9; color: #fff; }
+.years span { color: #D8D1D4; line-height: 1.3; }
+.values { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; padding: 0; list-style: none; }
+.values li { border: 1.5px solid var(--ink); border-radius: 22px; padding: 6px 16px; font-weight: 600; }
+
+/* Categorías por edad */
+.ruler { position: relative; margin: 10px 0 40px; }
+.ruler-track { display: grid; grid-template-columns: 2fr 3fr 2fr 2fr 1.4fr; gap: 4px; }
+.ruler-seg { height: 16px; background: var(--crimson); border-radius: 2px; }
+.ruler-seg:nth-child(2) { background: var(--crimson-deep); }
+.ruler-seg:nth-child(3) { background: var(--black); }
+.ruler-seg:nth-child(4) { background: #4A4447; }
+.ruler-seg:nth-child(5) { background: repeating-linear-gradient(90deg, var(--stone) 0 8px, transparent 8px 12px); }
+.ruler-ages { display: grid; grid-template-columns: repeat(9, 1fr) 1.4fr; margin-top: 8px; font-family: var(--display); font-weight: 800; font-size: 1.3rem; }
+.ruler-ages span:last-child { text-align: right; }
+.cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.cat { background: #fff; border-top: 6px solid var(--crimson); padding: 20px 18px 22px; }
+.cat:nth-child(2) { border-color: var(--crimson-deep); }
+.cat:nth-child(3) { border-color: var(--black); }
+.cat:nth-child(4) { border-color: #4A4447; }
+.cat:nth-child(5) { border-color: var(--stone); border-top-style: dashed; }
+.cat .age { font-family: var(--display); font-weight: 900; font-size: 2.6rem; line-height: 1; color: var(--crimson); }
+.cat h3 { margin: 6px 0 10px; }
+.cat p { font-size: .98rem; color: var(--stone); margin: 0; }
+
+/* Metodología */
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.pillar { border-top: 3px solid var(--crimson); padding-top: 18px; }
+.pillar h3 { margin-bottom: 10px; }
+.pillar p { color: #D8D1D4; margin: 0; }
+
+/* App */
+.app-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 80px); align-items: center; }
+.phone { width: min(100%, 330px); margin: 0 auto; background: #000; border-radius: 42px; padding: 12px; box-shadow: 0 30px 60px rgba(0,0,0,.35), inset 0 0 0 2px #2b2b2b; }
+.screen { background: #F4F1F2; border-radius: 32px; overflow: hidden; font-size: .78rem; color: var(--ink); }
+.scr-top { background: #000; color: #fff; padding: 16px 16px 0; }
+.scr-top .row { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; }
+.scr-top img { width: 22px; height: 26px; }
+.scr-top b { font-family: var(--display); font-size: 1rem; font-weight: 900; }
+.scr-top .exit { margin-left: auto; border: 1px solid rgba(255,255,255,.4); border-radius: 12px; padding: 2px 8px; font-size: .68rem; }
+.scr-ridge { display: block; width: 100%; height: 8px; background: #000; }
+.scr-ridge path { fill: var(--crimson); }
+.scr-body { padding: 12px; }
+.scr-card { background: #000; color: #fff; border-radius: 12px; padding: 10px 12px 16px; position: relative; overflow: hidden; }
+.scr-card .t { font-family: var(--display); font-size: 1.35rem; font-weight: 900; line-height: 1; margin: 4px 0; }
+.scr-card .chip { display: inline-block; background: var(--crimson); border-radius: 8px; padding: 1px 7px; font-size: .62rem; font-weight: 700; }
+.scr-note { background: #FBE9EC; border-left: 3px solid var(--crimson); border-radius: 4px; padding: 7px 9px; margin: 10px 0; line-height: 1.35; }
+.scr-bars { background: #fff; border-radius: 10px; padding: 8px 10px; }
+.scr-bar { display: grid; grid-template-columns: 84px 1fr; gap: 6px; align-items: center; padding: 3px 0; }
+.scr-bar i { display: block; height: 13px; border-radius: 7px; background: var(--crimson); color: #fff; font-style: normal; font-size: .58rem; font-weight: 700; padding-left: 6px; line-height: 13px; }
+.scr-push { margin: 10px 0 0; background: #fff; border-radius: 10px; padding: 8px 10px; display: flex; gap: 8px; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.scr-push img { width: 26px; height: 26px; border-radius: 6px; }
+.profiles { list-style: none; padding: 0; margin: 26px 0; display: grid; gap: 14px; }
+.profiles li { display: grid; grid-template-columns: 170px 1fr; gap: 16px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.18); }
+.profiles b { font-family: var(--display); font-size: 1.5rem; font-weight: 900; line-height: 1.05; }
+.profiles span { color: #D8D1D4; }
+.promise { background: var(--crimson); padding: 22px 24px; border-radius: 4px; margin-bottom: 26px; }
+.promise strong { font-family: var(--display); font-size: 1.6rem; font-weight: 900; display: block; line-height: 1; margin-bottom: 8px; }
+.promise p { margin: 0; }
+.app-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Vida en la escuela */
+.life { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); }
+.life div { padding: 26px 26px 26px 0; border-bottom: 1px solid var(--line); }
+.life div:not(:nth-child(3n+1)) { padding-left: 26px; border-left: 1px solid var(--line); }
+.life h3 { margin-bottom: 8px; }
+.life p { margin: 0; color: var(--stone); }
+
+/* Horarios */
+.school > *, .app-grid > *, .sched-grid > *, .join > * { min-width: 0; }
+.sched-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; align-items: start; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: #fff; min-width: 480px; }
+th, td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--display); font-weight: 800; font-size: 1.15rem; background: var(--black); color: #fff; }
+td:first-child { font-weight: 700; }
+.place { background: var(--black); color: #fff; padding: 26px; border-radius: 4px; }
+.place h3 { margin-bottom: 10px; }
+.place p { color: #D8D1D4; }
+
+/* Inscripción */
+.join { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 70px); align-items: start; }
+.join h2 { color: #fff; }
+.join .lede { color: #FBE0E4; }
+.steps { list-style: none; padding: 0; margin: 26px 0 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 46px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.3); }
+.steps li::before { content: counter(s); font-family: var(--display); font-weight: 900; font-size: 2.2rem; line-height: 1; }
+form.signup { background: #fff; color: var(--ink); padding: clamp(22px, 4vw, 34px); border-radius: 4px; }
+.field { display: block; margin-bottom: 16px; }
+.field span { display: block; font-weight: 600; font-size: .95rem; margin-bottom: 6px; }
+.field input, .field select, .field textarea { width: 100%; min-height: 50px; padding: 10px 14px; border: 1.5px solid var(--line); border-radius: 6px; font: inherit; background: #fff; color: var(--ink); }
+.field textarea { min-height: 90px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--ink); }
+.fields-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.form-error { color: var(--crimson); font-weight: 600; min-height: 1.5em; margin: 0 0 10px; }
+form.signup .btn { width: 100%; }
+.small { font-size: .88rem; color: var(--stone); margin: 12px 0 0; }
+
+/* Preguntas */
+.faq { max-width: 860px; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative; font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-size: 2rem; color: var(--crimson); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { color: var(--stone); max-width: 68ch; }
+
+/* Pie */
+footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
+.foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; }
+.foot img { width: 70px; }
+.foot h3 { font-size: 1.3rem; margin-bottom: 12px; }
+.foot ul { list-style: none; margin: 0; padding: 0; }
+.foot li { margin-bottom: 8px; }
+.foot a { color: #D8D1D4; text-decoration: none; }
+.foot a:hover { color: #fff; text-decoration: underline; }
+.copy { border-top: 1px solid rgba(255,255,255,.15); margin-top: 40px; padding-top: 20px; font-size: .88rem; color: #9A9396; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+.wa-float { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 30; width: 58px; height: 58px; border-radius: 50%; background: #1FAF54; color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.wa-float svg { width: 30px; height: 30px; }
+
+@media (max-width: 1000px) {
+  .cats { grid-template-columns: repeat(2, 1fr); }
+  .cat:last-child { grid-column: 1 / -1; }
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .life { grid-template-columns: 1fr 1fr; }
+  .life div:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+  .life div:nth-child(even) { padding-left: 26px; border-left: 1px solid var(--line); }
+}
+@media (max-width: 860px) {
+  .nav-links, .nav .btn-desktop { display: none; }
+  .menu-btn { display: grid; place-items: center; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-crest { order: -1; justify-self: start; width: 110px; }
+  .school, .app-grid, .sched-grid, .join { grid-template-columns: 1fr; }
+  .app-grid .phone { order: 2; }
+  .foot { grid-template-columns: 1fr 1fr; }
+  .foot > div:first-child { grid-column: 1 / -1; }
+  .ruler-ages { font-size: 1rem; }
+}
+@media (max-width: 560px) {
+  .cats, .pillars, .life { grid-template-columns: 1fr; }
+  .life div:nth-child(even) { padding-left: 0; border-left: 0; }
+  .profiles li { grid-template-columns: 1fr; gap: 4px; }
+  .fields-2 { grid-template-columns: 1fr; }
+  .hero-cta .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#inicio" aria-label="Atlético Deportivo Farallones, ir al inicio">
+      <img src="assets/crest.svg" alt="">
+      <span>Atlético Deportivo<br>Farallones<small>Escuela de fútbol · Cali</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#escuela">La escuela</a></li>
+      <li><a href="#categorias">Categorías</a></li>
+      <li><a href="#app">La app</a></li>
+      <li><a href="#horarios">Horarios</a></li>
+      <li><a href="#preguntas">Preguntas</a></li>
+    </ul>
+    <a class="btn btn-crimson btn-desktop" href="#inscripcion">Inscribir</a>
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" id="menu-open">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="top">
+    <img src="assets/crest.svg" alt="" width="44" height="53">
+    <button class="close-btn" type="button" id="menu-close">Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <ul>
+    <li><a href="#escuela">La escuela</a></li>
+    <li><a href="#categorias">Categorías</a></li>
+    <li><a href="#app">La app</a></li>
+    <li><a href="#horarios">Horarios</a></li>
+    <li><a href="#inscripcion">Inscripción</a></li>
+    <li><a href="#preguntas">Preguntas</a></li>
+  </ul>
+  <a class="btn btn-outline" data-app-link href="#">Entrar a la app</a>
+</div>
+
+<main>
+  <section class="hero" id="inicio" style="padding:0">
+    <div class="wrap hero-inner">
+      <div>
+        <h1>Aquí empieza su camino en el fútbol</h1>
+        <p>Escuela de fútbol para niños y niñas de 5 a 13 años en Cali. Entrenamos técnica, juego y valores, y cada semana las familias reciben el seguimiento de su hijo en nuestra app.</p>
+        <div class="hero-cta">
+          <a class="btn btn-crimson" href="#inscripcion">Inscribir a mi hijo</a>
+          <a class="btn btn-outline" data-app-link href="#">Entrar a la app</a>
+        </div>
+      </div>
+      <img class="hero-crest" src="assets/crest.svg" alt="Escudo de Atlético Deportivo Farallones: los Farallones de Cali sobre fondo carmesí y negro">
+    </div>
+    <!-- Silueta de los Farallones de Cali -->
+    <svg class="range" viewBox="0 0 1440 330" preserveAspectRatio="none" aria-hidden="true">
+      <path class="far" d="M0 330V210L90 170 150 196 240 120 300 150 380 92 440 130 520 70 590 118 650 96 730 150 820 84 890 128 960 104 1040 160 1120 110 1200 150 1290 120 1370 170 1440 150V330Z"/>
+      <path class="near" d="M0 330V262L70 240 130 252 210 196 260 214 340 150 390 176 470 96 520 140 560 120 640 190 700 168 780 52 840 128 880 106 960 182 1030 150 1110 206 1180 172 1260 222 1340 196 1440 236V330Z"/>
+      <path class="snow" d="M780 52 802 84 792 80 783 92 774 82 763 88Z M470 96 488 122 479 118 471 128 463 120 455 124Z M880 106 896 128 888 126 881 134 873 124Z"/>
+    </svg>
+    <span class="range-label">Farallones de Cali · Valle del Cauca</span>
+  </section>
+
+  <section id="escuela">
+    <div class="wrap school">
+      <div>
+        <h2>Formamos futbolistas y personas</h2>
+        <p class="lede">En Atlético Deportivo Farallones cada niño juega, aprende y se siente parte de un equipo. Entrenamos en grupos pequeños por edad, con ejercicios pensados para su etapa y mucho tiempo con el balón.</p>
+        <p>Creemos que el fútbol enseña a respetar, a esforzarse y a levantarse después de perder. Por eso medimos el progreso de cada jugador contra sí mismo, nunca contra los demás, y contamos con las familias para acompañar ese proceso.</p>
+        <p>Nuestro énfasis está en los niños de 5 a 13 años, la edad en que se aprenden los fundamentos y el gusto por el juego. También abrimos grupos juveniles y otras categorías según la demanda.</p>
+        <ul class="values" aria-label="Nuestros valores">
+          <li>Respeto</li><li>Disciplina</li><li>Compañerismo</li><li>Esfuerzo</li><li>Alegría de jugar</li>
+        </ul>
+      </div>
+      <article class="director">
+        <div class="director-photo">
+          <!-- Reemplaza este bloque por una foto: <img src="assets/director.jpg" alt="Juan Sebastián Trujillo Espinal"> -->
+          <span aria-hidden="true">JS</span>
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#000" d="M0 120V80L60 60 100 72 170 24 210 44 250 30 320 76 360 62 400 80V120Z"/></svg>
+        </div>
+        <div class="director-body">
+          <h3>Juan Sebastián Trujillo Espinal</h3>
+          <p class="role">Director deportivo</p>
+          <p>Ha dedicado su carrera a la formación de jugadores en Cali. Su método combina el trabajo técnico con el acompañamiento cercano a cada niño y a su familia.</p>
+          <div class="years"><b>+10</b><span>años formando futbolistas<br>en categorías infantiles</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="on-mist" id="categorias">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Una categoría para cada edad</h2>
+        <p class="lede">Agrupamos a los jugadores por edad para que entrenen con niños de su mismo nivel de desarrollo.</p>
+      </div>
+      <div class="ruler" aria-hidden="true">
+        <div class="ruler-track"><span class="ruler-seg"></span><span class="ruler-seg"></span><span class="ruler-seg"></span><span class="ruler-seg"></span><span class="ruler-seg"></span></div>
+        <div class="ruler-ages"><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14+</span></div>
+      </div>
+      <div class="cats">
+        <article class="cat"><div class="age">5–6</div><h3>Semillero</h3><p>Juegos con balón, coordinación y primeras reglas. Aprender jugando y perderle el miedo al balón.</p></article>
+        <article class="cat"><div class="age">7–9</div><h3>Iniciación</h3><p>Conducción, pase y control con ambos pies. Primeros partidos reducidos y trabajo en equipo.</p></article>
+        <article class="cat"><div class="age">10–11</div><h3>Pre-formación</h3><p>Técnica en velocidad, ubicación en la cancha y toma de decisiones en el juego.</p></article>
+        <article class="cat"><div class="age">12–13</div><h3>Formación</h3><p>Principios tácticos, preparación física acorde a la edad y torneos competitivos.</p></article>
+        <article class="cat"><div class="age">14+</div><h3>Otras categorías</h3><p>Grupos juveniles y entrenamientos especiales que abrimos según la demanda. Pregúntanos.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-dark">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cómo entrenamos</h2>
+        <p class="lede">Cada sesión tiene un objetivo claro y se adapta a la edad del grupo.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><h3>El balón primero</h3><p>Más toques por niño en cada entreno. Menos filas, más juego.</p></div>
+        <div class="pillar"><h3>Técnica con propósito</h3><p>Trabajamos los fundamentos dentro de situaciones reales de partido.</p></div>
+        <div class="pillar"><h3>Valores en la cancha</h3><p>Respeto al rival, al árbitro y al compañero se entrenan igual que el pase.</p></div>
+        <div class="pillar"><h3>Seguimiento cercano</h3><p>El profe registra cada semana cómo va el jugador y la familia lo ve en la app.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-dark" id="app" style="padding-top:0">
+    <div class="wrap app-grid">
+      <div class="phone" aria-label="Vista de ejemplo de la app en un teléfono" role="img">
+        <div class="screen" aria-hidden="true">
+          <div class="scr-top">
+            <div class="row"><img src="assets/crest.svg" alt=""><b>Farallones</b><span class="exit">Salir</span></div>
+          </div>
+          <svg class="scr-ridge" viewBox="0 0 400 14" preserveAspectRatio="none"><path d="M0 14V11L30 8 44 10 70 4 86 8 110 1 128 7 140 5 168 10 190 6 214 9 250 3 268 8 300 6 330 10 352 7 400 11V14Z"/></svg>
+          <div class="scr-body">
+            <div class="scr-card"><span class="chip">Iniciación</span><div class="t">Samuel Rengifo</div><span style="opacity:.75">8 años · Volante</span></div>
+            <div class="scr-note"><b>Seguimiento informativo.</b> Muestra el proceso de su hijo semana a semana. No es una calificación.</div>
+            <div class="scr-bars">
+              <div class="scr-bar"><span>Pase</span><i style="width:80%">Consolidado</i></div>
+              <div class="scr-bar"><span>Conducción</span><i style="width:60%">Avanzando</i></div>
+              <div class="scr-bar"><span>Compañerismo</span><i style="width:100%">Destacado</i></div>
+              <div class="scr-bar"><span>Velocidad</span><i style="width:40%">En proceso</i></div>
+            </div>
+            <div class="scr-push"><img src="assets/icon-192.png" alt=""><span><b>Nuevo seguimiento semanal</b><br>El profe registró la semana de Samuel.</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>El progreso de tu hijo, cada semana en tu celular</h2>
+        <p class="lede">Nuestra app de seguimiento deportivo conecta a la escuela, los profesores y las familias. Se instala como cualquier app, con el escudo en tu pantalla de inicio.</p>
+        <ul class="profiles">
+          <li><b>Profesores</b><span>Registran cada semana la asistencia, la técnica, el físico, el juego y la actitud de cada jugador, con una idea para practicar en casa.</span></li>
+          <li><b>Familias</b><span>Reciben una notificación en el teléfono cuando hay un reporte nuevo o un aviso, y ven la evolución de su hijo semana a semana.</span></li>
+          <li><b>Administración</b><span>Gestiona categorías, jugadores, profesores y accesos, y publica avisos para toda la escuela.</span></li>
+        </ul>
+        <div class="promise">
+          <strong>Un reporte para acompañar, no para presionar</strong>
+          <p>Cada reporte llega con un mensaje claro: es un seguimiento informativo del proceso, no una nota ni una comparación con otros niños. Sirve para conversar con tu hijo, motivarlo y celebrar sus avances.</p>
+        </div>
+        <div class="app-cta">
+          <a class="btn btn-crimson" data-app-link href="#">Entrar a la app</a>
+          <a class="btn btn-outline" href="#preguntas" data-open-faq="instalar">Cómo instalarla</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vida">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Más que entrenar</h2>
+        <p class="lede">Lo que vive un jugador de Farallones durante el año.</p>
+      </div>
+      <div class="life">
+        <div><h3>Festival mensual</h3><p>Una jornada de partidos internos entre categorías, abierta a las familias.</p></div>
+        <div><h3>Torneos y amistosos</h3><p>Participación en torneos locales de Cali y partidos contra otras escuelas.</p></div>
+        <div><h3>Escuela de padres</h3><p>Charlas sobre cómo acompañar al niño deportista: nutrición, descanso y manejo de la frustración.</p></div>
+        <div><h3>Reconocimiento por valores</h3><p>Cada mes destacamos al compañero, al más esforzado y al que mejor juega limpio en cada categoría.</p></div>
+        <div><h3>Evaluación semestral</h3><p>Una reunión con cada familia para revisar el proceso del semestre con el profesor.</p></div>
+        <div><h3>Convivencias</h3><p>Salidas y actividades fuera de la cancha para fortalecer la amistad del grupo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-mist" id="horarios">
+    <div class="wrap sched-grid">
+      <div>
+        <h2 style="margin-bottom:24px">Horarios</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Categoría</th><th scope="col">Edades</th><th scope="col">Días y hora</th></tr></thead>
+            <tbody>
+              <tr><td>Semillero</td><td>5 y 6 años</td><td>Martes y jueves · 3:30 p. m.</td></tr>
+              <tr><td>Iniciación</td><td>7 a 9 años</td><td>Martes y jueves · 4:30 p. m.</td></tr>
+              <tr><td>Pre-formación</td><td>10 y 11 años</td><td>Lunes, miércoles y viernes · 3:30 p. m.</td></tr>
+              <tr><td>Formación</td><td>12 y 13 años</td><td>Lunes, miércoles y viernes · 4:30 p. m.</td></tr>
+              <tr><td>Juvenil</td><td>14 a 17 años</td><td>Lunes, miércoles y viernes · 5:30 p. m.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">Los horarios pueden cambiar por temporada. Los cambios se avisan en la app.</p>
+      </div>
+      <aside class="place">
+        <h3>Dónde entrenamos</h3>
+        <p data-config="address">Cancha por confirmar · Cali, Valle del Cauca</p>
+        <p>Los sábados hay partidos y festivales según el calendario de cada categoría.</p>
+        <a class="btn btn-crimson" data-wa href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="on-crimson" id="inscripcion">
+    <div class="wrap join">
+      <div>
+        <h2>Inscribe a tu hijo</h2>
+        <p class="lede">Déjanos sus datos y te escribimos por WhatsApp para agendar una clase de prueba sin costo.</p>
+        <ol class="steps">
+          <li><span>Envías el formulario y te contactamos en menos de 24 horas.</span></li>
+          <li><span>Tu hijo viene a una clase de prueba con su categoría.</span></li>
+          <li><span>Formalizas la inscripción y recibes tu acceso a la app.</span></li>
+        </ol>
+      </div>
+      <form class="signup" id="signup" novalidate>
+        <div class="fields-2">
+          <label class="field"><span>Nombre del niño o niña</span><input name="child" autocomplete="off" required></label>
+          <label class="field"><span>Fecha de nacimiento</span><input name="birth" type="date" required></label>
+        </div>
+        <div class="fields-2">
+          <label class="field"><span>Nombre del acudiente</span><input name="parent" autocomplete="name" required></label>
+          <label class="field"><span>Celular</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="300 123 4567" required></label>
+        </div>
+        <label class="field"><span>Barrio</span><input name="barrio" autocomplete="address-level3"></label>
+        <label class="field"><span>¿Algo que debamos saber?</span><textarea name="notes" placeholder="Experiencia previa, condiciones de salud, preguntas…"></textarea></label>
+        <p class="form-error" role="alert" id="signup-error"></p>
+        <button class="btn btn-black" type="submit">Enviar por WhatsApp</button>
+        <p class="small">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap">
+      <div class="section-head"><h2>Preguntas frecuentes</h2></div>
+      <div class="faq">
+        <details><summary>¿Desde qué edad puede entrar mi hijo?</summary><p>Desde los 5 años. Nuestro énfasis está entre los 5 y los 13 años, y también tenemos grupos juveniles y otras categorías según la demanda.</p></details>
+        <details><summary>¿Necesita experiencia previa?</summary><p>No. Cada categoría recibe a niños que nunca han jugado y a niños con experiencia; el profesor adapta los ejercicios a cada uno.</p></details>
+        <details><summary>¿Qué ve la familia en la app?</summary><p>La asistencia, cómo le fue en técnica, físico, juego y actitud, lo mejor de la semana, en qué seguir trabajando y una idea para practicar en casa. También los avisos de partidos y eventos.</p></details>
+        <details><summary>¿El seguimiento es una calificación?</summary><p>No. Es un reporte informativo del proceso de tu hijo. No lo comparamos con otros niños y lo enviamos para que puedas acompañarlo y motivarlo, nunca para castigar.</p></details>
+        <details id="faq-instalar"><summary>¿Cómo instalo la app en mi celular?</summary><p>En Android, abre la app en Chrome y toca “Instalar app”. En iPhone, ábrela en Safari, toca Compartir y elige “Agregar a pantalla de inicio”. Luego ábrela desde el ícono del escudo y activa las notificaciones.</p></details>
+        <details><summary>¿Qué debe llevar a los entrenamientos?</summary><p>Ropa deportiva o uniforme, guayos o tenis, canilleras, termo con agua y bloqueador. Si tiene alguna condición de salud, cuéntale al profesor.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="assets/crest.svg" alt="Escudo de Atlético Deportivo Farallones">
+        <p style="margin-top:14px;color:#D8D1D4;max-width:36ch">Escuela de fútbol en Cali. Director deportivo: Juan Sebastián Trujillo Espinal.</p>
+      </div>
+      <div>
+        <h3>Escuela</h3>
+        <ul><li><a href="#escuela">La escuela</a></li><li><a href="#categorias">Categorías</a></li><li><a href="#horarios">Horarios</a></li><li><a href="#inscripcion">Inscripción</a></li></ul>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a data-ig href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a data-app-link href="#">Entrar a la app</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="year">2026</span> Atlético Deportivo Farallones · Cali, Colombia</span><span>Hecho con pasión por el fútbol formativo</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 2.9 2.9 0 00-.9 2.2 5 5 0 001.1 2.7 11.4 11.4 0 004.4 3.9c1.6.7 2.3.7 3.1.6a2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+  // ---- Configura aquí los datos de la escuela ----
+  const CONFIG = {
+    whatsapp: '573000000000',                       // Número con indicativo 57, sin espacios ni +
+    appUrl: 'https://farallones-app.onrender.com', // URL de la app en Render
+    instagram: 'https://instagram.com/',            // Perfil de Instagram
+    address: 'Cancha por confirmar · Cali, Valle del Cauca',
+  };
+
+  const wa = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+  document.querySelectorAll('[data-wa]').forEach((a) => { a.href = wa('Hola, quiero información sobre la escuela Atlético Deportivo Farallones.'); });
+  document.querySelectorAll('[data-app-link]').forEach((a) => { a.href = CONFIG.appUrl; });
+  document.querySelectorAll('[data-ig]').forEach((a) => { a.href = CONFIG.instagram; });
+  document.querySelectorAll('[data-config="address"]').forEach((el) => { el.textContent = CONFIG.address; });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Menú móvil con botón de cierre
+  const menu = document.getElementById('mobile-menu');
+  const openBtn = document.getElementById('menu-open');
+  const setMenu = (open) => {
+    menu.hidden = !open;
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) document.getElementById('menu-close').focus(); else openBtn.focus();
+  };
+  openBtn.addEventListener('click', () => setMenu(true));
+  document.getElementById('menu-close').addEventListener('click', () => setMenu(false));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { menu.hidden = true; document.body.style.overflow = ''; openBtn.setAttribute('aria-expanded', 'false'); }));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) setMenu(false); });
+
+  // Abrir la pregunta de instalación desde la sección de la app
+  document.querySelector('[data-open-faq="instalar"]').addEventListener('click', () => { document.getElementById('faq-instalar').open = true; });
+
+  // Formulario de inscripción → WhatsApp
+  document.getElementById('signup').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target.elements;
+    const err = document.getElementById('signup-error');
+    const missing = [['child', 'el nombre del niño o niña'], ['birth', 'la fecha de nacimiento'], ['parent', 'el nombre del acudiente'], ['phone', 'el celular']]
+      .filter(([k]) => !f[k].value.trim()).map(([, label]) => label);
+    if (missing.length) { err.textContent = `Falta ${missing.join(', ')}.`; f[[ 'child', 'birth', 'parent', 'phone' ].find((k) => !f[k].value.trim())].focus(); return; }
+    err.textContent = '';
+    const b = new Date(f.birth.value + 'T12:00:00');
+    const now = new Date();
+    let age = now.getFullYear() - b.getFullYear();
+    if (now < new Date(now.getFullYear(), b.getMonth(), b.getDate())) age--;
+    const msg = [
+      'Hola, quiero inscribir a mi hijo(a) en Atlético Deportivo Farallones.',
+      '',
+      `Jugador: ${f.child.value.trim()} (${age} años)`,
+      `Acudiente: ${f.parent.value.trim()}`,
+      `Celular: ${f.phone.value.trim()}`,
+      f.barrio.value.trim() ? `Barrio: ${f.barrio.value.trim()}` : null,
+      f.notes.value.trim() ? `Comentarios: ${f.notes.value.trim()}` : null,
+    ].filter((x) => x !== null).join('\n');
+    window.open(wa(msg), '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
