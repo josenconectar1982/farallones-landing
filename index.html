@@ -5,25 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Atlético Deportivo Farallones · Escuela de fútbol en Cali</title>
 <meta name="description" content="Escuela de fútbol para niños y niñas de 5 a 13 años en Cali. Dirigida por Juan Sebastián Trujillo Espinal, con más de 10 años formando futbolistas. Seguimiento semanal en nuestra app.">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#1A4073">
 <meta property="og:title" content="Atlético Deportivo Farallones · Escuela de fútbol en Cali">
 <meta property="og:description" content="Formamos futbolistas y personas desde los 5 años. Seguimiento semanal para las familias desde nuestra app.">
 <meta property="og:image" content="assets/icon-512.png">
-<link rel="icon" type="image/svg+xml" href="assets/crest.svg">
+<link rel="icon" type="image/png" href="assets/icon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --crimson: #B0122C;
-  --crimson-deep: #6E0A1A;
-  --crimson-light: #E8414F;
-  --black: #000;
-  --ink: #161414;
-  --stone: #6B6569;
-  --line: #E4DEE0;
-  --mist: #F4F1F2;
+  /* Colores del club: rojo, azul y blanco */
+  --red: #D3212A;
+  --red-deep: #A3151C;
+  --red-light: #E8414A;
+  --navy: #1A4073;
+  --navy-deep: #102B52;
+  --navy-light: #2F5E9E;
+  --ink: #13223A;
+  --stone: #5E6B7D;
+  --line: #DCE3EC;
+  --mist: #F2F5F9;
   --white: #fff;
   --display: 'Big Shoulders Display', 'Arial Narrow', 'Roboto Condensed', Impact, sans-serif;
   --body: 'Barlow', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -40,36 +43,36 @@ h1, h2, h3 { font-family: var(--display); line-height: .98; margin: 0; letter-sp
 h2 { font-size: clamp(2.5rem, 6vw, 4.25rem); font-weight: 900; margin-bottom: 22px; }
 h3 { font-size: 1.6rem; font-weight: 800; }
 p { margin: 0 0 1em; }
-:focus-visible { outline: 3px solid var(--crimson-light); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--red-light); outline-offset: 3px; }
 [hidden] { display: none !important; }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 22px; }
 .lede { font-size: 1.2rem; max-width: 60ch; color: var(--stone); }
-.on-dark .lede { color: #CFC8CB; }
+.on-dark .lede { color: #C9D5E6; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; font-weight: 700; font-size: 1.05rem; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-family: var(--body); transition: background .15s, color .15s, border-color .15s; }
 .btn svg { width: 20px; height: 20px; }
-.btn-crimson { background: var(--crimson); color: #fff; }
-.btn-crimson:hover { background: var(--crimson-deep); }
+.btn-red { background: var(--red); color: #fff; }
+.btn-red:hover { background: var(--red-deep); }
 .btn-outline { border-color: rgba(255,255,255,.55); color: #fff; background: transparent; }
-.btn-outline:hover { background: #fff; color: var(--black); }
-.btn-black { background: var(--black); color: #fff; }
-.btn-black:hover { background: var(--crimson); }
+.btn-outline:hover { background: #fff; color: var(--navy); }
+.btn-black { background: var(--navy); color: #fff; }
+.btn-black:hover { background: var(--red); }
 
 /* ---------- Navegación ---------- */
-.nav { position: sticky; top: 0; z-index: 40; background: var(--black); color: #fff; }
-.nav::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--black); z-index: 10; }
+.nav { position: sticky; top: 0; z-index: 40; background: var(--navy); color: #fff; }
+.nav::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--navy); z-index: 10; }
 .nav-inner { max-width: var(--wrap); margin: 0 auto; padding: 0 22px; height: 76px; display: flex; align-items: center; gap: 20px; }
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
-.logo img { width: 44px; height: 53px; }
+.logo img { width: 46px; height: 55px; object-fit: contain; }
 .logo span { font-family: var(--display); font-weight: 900; font-size: 1.3rem; line-height: .95; }
-.logo small { display: block; font-family: var(--body); font-weight: 500; font-size: .78rem; color: #BDB5B8; letter-spacing: .02em; }
+.logo small { display: block; font-family: var(--body); font-weight: 500; font-size: .78rem; color: #B4C3D9; letter-spacing: .02em; }
 .nav-links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { text-decoration: none; font-weight: 600; font-size: .98rem; color: #E6E0E2; }
-.nav-links a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--crimson); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+.nav-links a { text-decoration: none; font-weight: 600; font-size: .98rem; color: #E3EAF4; }
+.nav-links a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 8px; }
 .nav .btn { min-height: 44px; padding: 0 18px; font-size: .95rem; }
 .menu-btn { display: none; width: 46px; height: 46px; border: 0; border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
 .menu-btn svg { width: 26px; height: 26px; }
-.mobile-menu { position: fixed; inset: 0; z-index: 60; background: var(--black); color: #fff; padding: calc(env(safe-area-inset-top, 0px) + 14px) 22px 30px; display: flex; flex-direction: column; }
+.mobile-menu { position: fixed; inset: 0; z-index: 60; background: var(--navy); color: #fff; padding: calc(env(safe-area-inset-top, 0px) + 14px) 22px 30px; display: flex; flex-direction: column; }
 .mobile-menu .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
 .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
 .mobile-menu li a { display: block; font-family: var(--display); font-weight: 900; font-size: 2.6rem; text-decoration: none; padding: 6px 0; }
@@ -77,17 +80,16 @@ p { margin: 0 0 1em; }
 .close-btn { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 16px; border-radius: 23px; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #fff; font: 600 1rem var(--body); cursor: pointer; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; background: var(--black); color: #fff; overflow: hidden; }
+.hero { position: relative; background: var(--navy); color: #fff; overflow: hidden; }
 .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.35fr .65fr; gap: 40px; align-items: center; padding-top: clamp(48px, 9vw, 110px); padding-bottom: clamp(150px, 22vw, 290px); }
 .hero h1 { font-size: clamp(3.4rem, 10vw, 8rem); font-weight: 900; line-height: .9; margin-bottom: 26px; text-wrap: balance; }
-.hero p { font-size: 1.25rem; color: #D8D1D4; max-width: 34em; }
+.hero p { font-size: 1.25rem; color: #D3DDEB; max-width: 34em; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-.hero-crest { justify-self: center; width: min(100%, 320px); filter: drop-shadow(0 24px 40px rgba(176,18,44,.35)); }
+.hero-crest { justify-self: center; width: min(100%, 320px); filter: drop-shadow(0 20px 36px rgba(0,0,0,.35)); }
 .range { position: absolute; left: 0; right: 0; bottom: -1px; z-index: 1; width: 100%; height: clamp(150px, 24vw, 330px); display: block; }
-.range .far { fill: var(--crimson-deep); }
-.range .near { fill: var(--crimson); }
-.range .snow { fill: #fff; }
-.range-label { position: absolute; z-index: 2; right: 22px; bottom: 18px; font-weight: 600; font-size: .9rem; color: #fff; opacity: .9; }
+.range .far { fill: var(--navy-light); }
+.range .near { fill: #fff; }
+.range-label { position: absolute; z-index: 2; right: 22px; bottom: 18px; font-weight: 600; font-size: .9rem; color: var(--navy); }
 @media (prefers-reduced-motion: no-preference) {
   .range .near { animation: rise 1.1s cubic-bezier(.2,.7,.2,1) both; }
   .range .far { animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both; }
@@ -98,80 +100,80 @@ p { margin: 0 0 1em; }
 
 /* ---------- Secciones ---------- */
 section { padding: clamp(70px, 10vw, 120px) 0; }
-.on-dark { background: var(--black); color: #fff; }
-.on-crimson { background: var(--crimson); color: #fff; }
+.on-dark { background: var(--navy); color: #fff; }
+.on-red { background: var(--red); color: #fff; }
 .on-mist { background: var(--mist); }
 .section-head { max-width: 760px; margin-bottom: 46px; }
 .section-head h2 { margin-bottom: 16px; }
 
 /* La escuela */
 .school { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(30px, 6vw, 80px); align-items: start; }
-.director { background: var(--black); color: #fff; border-radius: 4px; overflow: hidden; }
-.director-photo { aspect-ratio: 4 / 3; background: var(--crimson); position: relative; display: grid; place-items: center; overflow: hidden; }
+.director { background: var(--navy); color: #fff; border-radius: 4px; overflow: hidden; }
+.director-photo { aspect-ratio: 4 / 3; background: var(--red); position: relative; display: grid; place-items: center; overflow: hidden; }
 .director-photo span { font-family: var(--display); font-weight: 900; font-size: clamp(6rem, 16vw, 9rem); color: rgba(0,0,0,.28); line-height: 1; }
 .director-photo svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 45%; }
 .director-body { padding: 24px 26px 28px; }
 .director-body h3 { font-size: 2rem; margin-bottom: 4px; }
-.director-body .role { color: #E9A3AE; font-weight: 600; margin-bottom: 14px; }
-.director-body p { color: #D8D1D4; }
+.director-body .role { color: #FFB4B7; font-weight: 600; margin-bottom: 14px; }
+.director-body p { color: #D3DDEB; }
 .years { display: flex; align-items: baseline; gap: 12px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 16px; margin-top: 6px; }
 .years b { font-family: var(--display); font-size: 3.6rem; font-weight: 900; line-height: .9; color: #fff; }
-.years span { color: #D8D1D4; line-height: 1.3; }
+.years span { color: #D3DDEB; line-height: 1.3; }
 .values { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; padding: 0; list-style: none; }
 .values li { border: 1.5px solid var(--ink); border-radius: 22px; padding: 6px 16px; font-weight: 600; }
 
 /* Categorías por edad */
 .ruler { position: relative; margin: 10px 0 40px; }
 .ruler-track { display: grid; grid-template-columns: 2fr 3fr 2fr 2fr 1.4fr; gap: 4px; }
-.ruler-seg { height: 16px; background: var(--crimson); border-radius: 2px; }
-.ruler-seg:nth-child(2) { background: var(--crimson-deep); }
-.ruler-seg:nth-child(3) { background: var(--black); }
-.ruler-seg:nth-child(4) { background: #4A4447; }
+.ruler-seg { height: 16px; background: var(--red); border-radius: 2px; }
+.ruler-seg:nth-child(2) { background: var(--red-deep); }
+.ruler-seg:nth-child(3) { background: var(--navy); }
+.ruler-seg:nth-child(4) { background: var(--navy-light); }
 .ruler-seg:nth-child(5) { background: repeating-linear-gradient(90deg, var(--stone) 0 8px, transparent 8px 12px); }
 .ruler-ages { display: grid; grid-template-columns: repeat(9, 1fr) 1.4fr; margin-top: 8px; font-family: var(--display); font-weight: 800; font-size: 1.3rem; }
 .ruler-ages span:last-child { text-align: right; }
 .cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-.cat { background: #fff; border-top: 6px solid var(--crimson); padding: 20px 18px 22px; }
-.cat:nth-child(2) { border-color: var(--crimson-deep); }
-.cat:nth-child(3) { border-color: var(--black); }
-.cat:nth-child(4) { border-color: #4A4447; }
+.cat { background: #fff; border-top: 6px solid var(--red); padding: 20px 18px 22px; }
+.cat:nth-child(2) { border-color: var(--red-deep); }
+.cat:nth-child(3) { border-color: var(--navy); }
+.cat:nth-child(4) { border-color: var(--navy-light); }
 .cat:nth-child(5) { border-color: var(--stone); border-top-style: dashed; }
-.cat .age { font-family: var(--display); font-weight: 900; font-size: 2.6rem; line-height: 1; color: var(--crimson); }
+.cat .age { font-family: var(--display); font-weight: 900; font-size: 2.6rem; line-height: 1; color: var(--red); }
 .cat h3 { margin: 6px 0 10px; }
 .cat p { font-size: .98rem; color: var(--stone); margin: 0; }
 
 /* Metodología */
 .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-.pillar { border-top: 3px solid var(--crimson); padding-top: 18px; }
+.pillar { border-top: 3px solid var(--red); padding-top: 18px; }
 .pillar h3 { margin-bottom: 10px; }
-.pillar p { color: #D8D1D4; margin: 0; }
+.pillar p { color: #D3DDEB; margin: 0; }
 
 /* App */
 .app-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 80px); align-items: center; }
 .phone { width: min(100%, 330px); margin: 0 auto; background: #000; border-radius: 42px; padding: 12px; box-shadow: 0 30px 60px rgba(0,0,0,.35), inset 0 0 0 2px #2b2b2b; }
-.screen { background: #F4F1F2; border-radius: 32px; overflow: hidden; font-size: .78rem; color: var(--ink); }
-.scr-top { background: #000; color: #fff; padding: 16px 16px 0; }
+.screen { background: #F2F5F9; border-radius: 32px; overflow: hidden; font-size: .78rem; color: var(--ink); }
+.scr-top { background: var(--navy); color: #fff; padding: 16px 16px 0; }
 .scr-top .row { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; }
-.scr-top img { width: 22px; height: 26px; }
+.scr-top img { width: 24px; height: 29px; object-fit: contain; }
 .scr-top b { font-family: var(--display); font-size: 1rem; font-weight: 900; }
 .scr-top .exit { margin-left: auto; border: 1px solid rgba(255,255,255,.4); border-radius: 12px; padding: 2px 8px; font-size: .68rem; }
-.scr-ridge { display: block; width: 100%; height: 8px; background: #000; }
-.scr-ridge path { fill: var(--crimson); }
+.scr-ridge { display: block; width: 100%; height: 8px; background: var(--navy); }
+.scr-ridge path { fill: var(--red); }
 .scr-body { padding: 12px; }
-.scr-card { background: #000; color: #fff; border-radius: 12px; padding: 10px 12px 16px; position: relative; overflow: hidden; }
+.scr-card { background: var(--navy); color: #fff; border-radius: 12px; padding: 10px 12px 16px; position: relative; overflow: hidden; }
 .scr-card .t { font-family: var(--display); font-size: 1.35rem; font-weight: 900; line-height: 1; margin: 4px 0; }
-.scr-card .chip { display: inline-block; background: var(--crimson); border-radius: 8px; padding: 1px 7px; font-size: .62rem; font-weight: 700; }
-.scr-note { background: #FBE9EC; border-left: 3px solid var(--crimson); border-radius: 4px; padding: 7px 9px; margin: 10px 0; line-height: 1.35; }
+.scr-card .chip { display: inline-block; background: var(--red); border-radius: 8px; padding: 1px 7px; font-size: .62rem; font-weight: 700; }
+.scr-note { background: #FDECEC; border-left: 3px solid var(--red); border-radius: 4px; padding: 7px 9px; margin: 10px 0; line-height: 1.35; }
 .scr-bars { background: #fff; border-radius: 10px; padding: 8px 10px; }
 .scr-bar { display: grid; grid-template-columns: 84px 1fr; gap: 6px; align-items: center; padding: 3px 0; }
-.scr-bar i { display: block; height: 13px; border-radius: 7px; background: var(--crimson); color: #fff; font-style: normal; font-size: .58rem; font-weight: 700; padding-left: 6px; line-height: 13px; }
+.scr-bar i { display: block; height: 13px; border-radius: 7px; background: var(--red); color: #fff; font-style: normal; font-size: .58rem; font-weight: 700; padding-left: 6px; line-height: 13px; }
 .scr-push { margin: 10px 0 0; background: #fff; border-radius: 10px; padding: 8px 10px; display: flex; gap: 8px; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
 .scr-push img { width: 26px; height: 26px; border-radius: 6px; }
 .profiles { list-style: none; padding: 0; margin: 26px 0; display: grid; gap: 14px; }
 .profiles li { display: grid; grid-template-columns: 170px 1fr; gap: 16px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.18); }
 .profiles b { font-family: var(--display); font-size: 1.5rem; font-weight: 900; line-height: 1.05; }
-.profiles span { color: #D8D1D4; }
-.promise { background: var(--crimson); padding: 22px 24px; border-radius: 4px; margin-bottom: 26px; }
+.profiles span { color: #D3DDEB; }
+.promise { background: var(--red); padding: 22px 24px; border-radius: 4px; margin-bottom: 26px; }
 .promise strong { font-family: var(--display); font-size: 1.6rem; font-weight: 900; display: block; line-height: 1; margin-bottom: 8px; }
 .promise p { margin: 0; }
 .app-cta { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -189,16 +191,16 @@ section { padding: clamp(70px, 10vw, 120px) 0; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; background: #fff; min-width: 480px; }
 th, td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); }
-th { font-family: var(--display); font-weight: 800; font-size: 1.15rem; background: var(--black); color: #fff; }
+th { font-family: var(--display); font-weight: 800; font-size: 1.15rem; background: var(--navy); color: #fff; }
 td:first-child { font-weight: 700; }
-.place { background: var(--black); color: #fff; padding: 26px; border-radius: 4px; }
+.place { background: var(--navy); color: #fff; padding: 26px; border-radius: 4px; }
 .place h3 { margin-bottom: 10px; }
-.place p { color: #D8D1D4; }
+.place p { color: #D3DDEB; }
 
 /* Inscripción */
 .join { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 70px); align-items: start; }
 .join h2 { color: #fff; }
-.join .lede { color: #FBE0E4; }
+.join .lede { color: #FFE3E4; }
 .steps { list-style: none; padding: 0; margin: 26px 0 0; counter-reset: s; }
 .steps li { counter-increment: s; display: grid; grid-template-columns: 46px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.3); }
 .steps li::before { content: counter(s); font-family: var(--display); font-weight: 900; font-size: 2.2rem; line-height: 1; }
@@ -209,7 +211,7 @@ form.signup { background: #fff; color: var(--ink); padding: clamp(22px, 4vw, 34p
 .field textarea { min-height: 90px; resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--ink); }
 .fields-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
-.form-error { color: var(--crimson); font-weight: 600; min-height: 1.5em; margin: 0 0 10px; }
+.form-error { color: var(--red); font-weight: 600; min-height: 1.5em; margin: 0 0 10px; }
 form.signup .btn { width: 100%; }
 .small { font-size: .88rem; color: var(--stone); margin: 12px 0 0; }
 
@@ -219,20 +221,20 @@ form.signup .btn { width: 100%; }
 .faq details:last-child { border-bottom: 1px solid var(--line); }
 .faq summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative; font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-size: 2rem; color: var(--crimson); }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-size: 2rem; color: var(--red); }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { color: var(--stone); max-width: 68ch; }
 
 /* Pie */
-footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
+footer { background: var(--navy-deep); color: #fff; padding: 60px 0 34px; }
 .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; }
 .foot img { width: 70px; }
 .foot h3 { font-size: 1.3rem; margin-bottom: 12px; }
 .foot ul { list-style: none; margin: 0; padding: 0; }
 .foot li { margin-bottom: 8px; }
-.foot a { color: #D8D1D4; text-decoration: none; }
+.foot a { color: #D3DDEB; text-decoration: none; }
 .foot a:hover { color: #fff; text-decoration: underline; }
-.copy { border-top: 1px solid rgba(255,255,255,.15); margin-top: 40px; padding-top: 20px; font-size: .88rem; color: #9A9396; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.copy { border-top: 1px solid rgba(255,255,255,.15); margin-top: 40px; padding-top: 20px; font-size: .88rem; color: #95A6C0; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 .wa-float { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 30; width: 58px; height: 58px; border-radius: 50%; background: #1FAF54; color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
 .wa-float svg { width: 30px; height: 30px; }
@@ -270,7 +272,7 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="#inicio" aria-label="Atlético Deportivo Farallones, ir al inicio">
-      <img src="assets/crest.svg" alt="">
+      <img src="assets/crest.png" alt="">
       <span>Atlético Deportivo<br>Farallones<small>Escuela de fútbol · Cali</small></span>
     </a>
     <ul class="nav-links">
@@ -280,7 +282,7 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
       <li><a href="#horarios">Horarios</a></li>
       <li><a href="#preguntas">Preguntas</a></li>
     </ul>
-    <a class="btn btn-crimson btn-desktop" href="#inscripcion">Inscribir</a>
+    <a class="btn btn-red btn-desktop" href="#inscripcion">Inscribir</a>
     <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" id="menu-open">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -289,7 +291,7 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
 
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
   <div class="top">
-    <img src="assets/crest.svg" alt="" width="44" height="53">
+    <img src="assets/crest.png" alt="" width="46" height="55" style="object-fit:contain">
     <button class="close-btn" type="button" id="menu-close">Cerrar <span aria-hidden="true">×</span></button>
   </div>
   <ul>
@@ -310,17 +312,16 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
         <h1>Aquí empieza su camino en el fútbol</h1>
         <p>Escuela de fútbol para niños y niñas de 5 a 13 años en Cali. Entrenamos técnica, juego y valores, y cada semana las familias reciben el seguimiento de su hijo en nuestra app.</p>
         <div class="hero-cta">
-          <a class="btn btn-crimson" href="#inscripcion">Inscribir a mi hijo</a>
+          <a class="btn btn-red" href="#inscripcion">Inscribir a mi hijo</a>
           <a class="btn btn-outline" data-app-link href="#">Entrar a la app</a>
         </div>
       </div>
-      <img class="hero-crest" src="assets/crest.svg" alt="Escudo de Atlético Deportivo Farallones: los Farallones de Cali sobre fondo carmesí y negro">
+      <img class="hero-crest" src="assets/crest.png" alt="Escudo del club: las letras CAF en rojo dentro de un círculo azul, con una estrella dorada y laureles verdes">
     </div>
     <!-- Silueta de los Farallones de Cali -->
     <svg class="range" viewBox="0 0 1440 330" preserveAspectRatio="none" aria-hidden="true">
       <path class="far" d="M0 330V210L90 170 150 196 240 120 300 150 380 92 440 130 520 70 590 118 650 96 730 150 820 84 890 128 960 104 1040 160 1120 110 1200 150 1290 120 1370 170 1440 150V330Z"/>
       <path class="near" d="M0 330V262L70 240 130 252 210 196 260 214 340 150 390 176 470 96 520 140 560 120 640 190 700 168 780 52 840 128 880 106 960 182 1030 150 1110 206 1180 172 1260 222 1340 196 1440 236V330Z"/>
-      <path class="snow" d="M780 52 802 84 792 80 783 92 774 82 763 88Z M470 96 488 122 479 118 471 128 463 120 455 124Z M880 106 896 128 888 126 881 134 873 124Z"/>
     </svg>
     <span class="range-label">Farallones de Cali · Valle del Cauca</span>
   </section>
@@ -340,7 +341,7 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
         <div class="director-photo">
           <!-- Reemplaza este bloque por una foto: <img src="assets/director.jpg" alt="Juan Sebastián Trujillo Espinal"> -->
           <span aria-hidden="true">JS</span>
-          <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#000" d="M0 120V80L60 60 100 72 170 24 210 44 250 30 320 76 360 62 400 80V120Z"/></svg>
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#1A4073" d="M0 120V80L60 60 100 72 170 24 210 44 250 30 320 76 360 62 400 80V120Z"/></svg>
         </div>
         <div class="director-body">
           <h3>Juan Sebastián Trujillo Espinal</h3>
@@ -392,7 +393,7 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
       <div class="phone" aria-label="Vista de ejemplo de la app en un teléfono" role="img">
         <div class="screen" aria-hidden="true">
           <div class="scr-top">
-            <div class="row"><img src="assets/crest.svg" alt=""><b>Farallones</b><span class="exit">Salir</span></div>
+            <div class="row"><img src="assets/crest.png" alt=""><b>Farallones</b><span class="exit">Salir</span></div>
           </div>
           <svg class="scr-ridge" viewBox="0 0 400 14" preserveAspectRatio="none"><path d="M0 14V11L30 8 44 10 70 4 86 8 110 1 128 7 140 5 168 10 190 6 214 9 250 3 268 8 300 6 330 10 352 7 400 11V14Z"/></svg>
           <div class="scr-body">
@@ -421,7 +422,7 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
           <p>Cada reporte llega con un mensaje claro: es un seguimiento informativo del proceso, no una nota ni una comparación con otros niños. Sirve para conversar con tu hijo, motivarlo y celebrar sus avances.</p>
         </div>
         <div class="app-cta">
-          <a class="btn btn-crimson" data-app-link href="#">Entrar a la app</a>
+          <a class="btn btn-red" data-app-link href="#">Entrar a la app</a>
           <a class="btn btn-outline" href="#preguntas" data-open-faq="instalar">Cómo instalarla</a>
         </div>
       </div>
@@ -467,12 +468,12 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
         <h3>Dónde entrenamos</h3>
         <p data-config="address">Cancha por confirmar · Cali, Valle del Cauca</p>
         <p>Los sábados hay partidos y festivales según el calendario de cada categoría.</p>
-        <a class="btn btn-crimson" data-wa href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+        <a class="btn btn-red" data-wa href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
       </aside>
     </div>
   </section>
 
-  <section class="on-crimson" id="inscripcion">
+  <section class="on-red" id="inscripcion">
     <div class="wrap join">
       <div>
         <h2>Inscribe a tu hijo</h2>
@@ -520,8 +521,8 @@ footer { background: var(--black); color: #fff; padding: 60px 0 34px; }
   <div class="wrap">
     <div class="foot">
       <div>
-        <img src="assets/crest.svg" alt="Escudo de Atlético Deportivo Farallones">
-        <p style="margin-top:14px;color:#D8D1D4;max-width:36ch">Escuela de fútbol en Cali. Director deportivo: Juan Sebastián Trujillo Espinal.</p>
+        <img src="assets/crest.png" alt="Escudo de Atlético Deportivo Farallones">
+        <p style="margin-top:14px;color:#D3DDEB;max-width:36ch">Escuela de fútbol en Cali. Director deportivo: Juan Sebastián Trujillo Espinal.</p>
       </div>
       <div>
         <h3>Escuela</h3>
